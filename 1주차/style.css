@@ -1,0 +1,74 @@
+
+
+
+body{
+	margin:0 auto;
+}
+
+#top_nav{ /* 상단바 */
+	position: relative;
+	width: 900px;
+	height: 80px;
+	background: #white;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+h1{ /* 로고 */
+	color: #16364D;
+	float: left;
+	font-size:32px;
+	list-style-type:none;
+}
+h1>a{text-decoration: none; color: #16364D;} /* 로고 클릭시에도 색 변경 없게 하기*/
+
+#top_bar { /* 메뉴바 */
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+#top_bar >li{
+	float:left;
+}
+#top_bar >li>a{ /* 메뉴바 공통 속성 */
+	text-decoration: none; color: black;
+	width:150px;
+	height:70px;
+	display: block;
+	color: black;
+	font-size: 16px;
+	margin: 0 auto;
+	text-align:center;
+	line-height:90px;
+}
+#top_bar > li> a:hover{ /* 마우스 올렸을 때 밑줄 부여 */
+	text-decoration: none; 
+	border-bottom:2px solid black;
+}
+#top_bar > li> top_bar_intro:visited{ /* 카페 소개 클릭 시 */
+
+}
+	
+#main_image { /* 대문이미지 */
+	position: relative;
+	z-index: 50;
+}
+
+#bottom { /* 하단바 공통 속성 */
+	background-color: #262626;
+	position: relative;
+	height:150px;
+	width:100%;
+	color:grey;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+
+#bottom_logo{ /* 하단바 - 로고 */
+	font-size:22px;
+	font-weight:bold;
+}
+#bottom_copy_info{ /* 하단바 - 회사 정보 */
+	font-size:12px;
+}
