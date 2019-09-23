@@ -6,64 +6,53 @@
 
 <body>
 <!---상단바---->
-   <div id = "top_nav">
-      <h1 id="top_logo"><a href="main.html">A COFFEE</a>&emsp;&emsp;&emsp;</h1>
-         <ul id = "top_bar">
-            <li><a id = "top_bar_intro" href="#">카페 소개</a></li> <!--과제 요구사항 1. 카페 소개-->
-            <li><a id = "top_bar_menu" href="cafe_menu.html">메뉴</a></li> <!--과제 요구사항 2. 메뉴 소개-->
-            <li><a id = "top_bar_notice" href="#">공지사항</a></li>
-            <li><a id = "top_bar_event" href="#">이벤트</a></li>
+   <div id = "header">
+      <h1 id="header_logo"><a href="main.html">A COFFEE</a>&emsp;&emsp;&emsp;</h1>
+         <ul id = "header_bar">
+            <li><a id = "header_bar_intro" href="cafe_intro.html">카페 소개</a></li> <!--과제 요구사항 1. 카페 소개-->
+            <li><a id = "header_bar_menu" href="cafe_menu.html">메뉴</a></li> <!--과제 요구사항 2. 메뉴 소개-->
+            <li><a id = "header_bar_notice" href="#">공지사항</a></li>
+            <li><a id = "header_bar_event" href="#">이벤트</a></li>
          </ul>
    </div>
 <!---메인 이미지 --->
 	<div id ="wrap">
      <div id = "menu_image"><img src="images/menu_image.png" style="width:100%; height:auto;"></div>
-	 <div id = "text">
+	 <div id = "menu_text">
 		<ul id = "bread_drink">
 			<li>음료</li>
 			<li>베이커리</li>
 		</div>
 		</div>
-<!---메인 이미지 --->
+<!---메뉴 이미지 --->
 	<div id = "menu">
 		<!---<br><p>ㅡ 음료 ㅡ</p></br> -->
-		<br></br><p></p>
-		<img src="images/dr_americano.jpg" style="width:250px; height:auto;">
-		<img src="images/dr_cafelatte.jpg" style="width:250px; height:auto;">
-		<img src="images/dr_cafemocha.jpg" style="width:250px; height:auto;">
-		<img src="images/dr_caramel.jpg" style="width:250px; height:auto;">
-		<img src="images/dr_vanilla.jpg" style="width:250px; height:auto;">
+		<ul id = "menu_drink">
+			<div id = "menu_1">
+				<img src="images/dr_americano.jpg" style="width:100%; height:auto;"><br></br><p>아메리카노</p><p>\2500</p></div>
+			<div id = "menu_2">
+				<img src="images/dr_cafelatte.jpg" style="width:100%; height:auto;"><br></br><p>카페라떼</p><p>\3000</p></div>
+			<div id = "menu_3">
+				<img src="images/dr_cafemocha.jpg" style="width:100%; height:auto;"><br></br><p>카페모카</p><p>\3000</p></div>
+			<div id = "menu_4">
+				<img src="images/dr_caramel.jpg" style="width:100%; height:auto;"><br></br><p>카라멜마끼야또</p><p>\3000</p></div>
+			<div id = "menu_5">
+				<img src="images/dr_vanilla.jpg" style="width:100%; height:auto;"><br></br><p>바닐라라떼</p><p>\3000</p></div>
+		</ul>
 		<p></p>
-		<div style="float:left; padding-left:400px;">아메리카노</div>
-		<div style="float:left; padding-left:180px;">카페라떼</div>
-		<div style="float:left; padding-left:200px;">카페모카</div>
-		<div style="float:left; padding-left:160px;">카라멜 마끼야또</div>
-		<div style="float:left; padding-left:160px;">바닐라라떼</div>
-		<div style="float:left; padding-left:415px;">\2500</div>
-		<div style="float:left; padding-left:200px;">\3500</div>
-		<div style="float:left; padding-left:220px;">\3500</div>
-		<div style="float:left; padding-left:210px;">\3500</div>
-		<div style="float:left; padding-left:210px;">\3500</div>
-		<!---<br></br><p>ㅡ 베이커리 ㅡ</p> -->
+		<ul id = "menu_bakery">
+			<div id = "menu_6">
+				<img src="images/br_garlic.png" style="width:100%; height:auto;"><p>갈릭 치즈 브레드</p><p>\4000</p></div>
+			<div id = "menu_7">
+				<img src="images/br_tiramisu.png" style="width:100%; height:auto;"><p>티라미수</p><p>\4000</p></div>
+			<div id = "menu_8">
+				<img src="images/br_croissant.png" style="width:100%; height:auto;"><p>크로아상</p><p>\2000</p></div>
+			<div id = "menu_9">
+				<img src="images/br_plain.png" style="width:100%; height:auto;"><p>플레인 케익</p><p>\2500</p></div>
+			<div id = "menu_10">
+				<img src="images/br_choco.png" style="width:100%; height:auto;"><p>초코 케익</p><p>\2500</p></div>
+		</ul>
 		<br></br><p></p>
-		<img src="images/br_garlic.png" style="width:250px; height:auto;">
-		<img src="images/br_croissant.png" style="width:250px; height:auto;">
-		<img src="images/br_tiramisu.png" style="width:250px; height:auto;">
-		<img src="images/br_plain.png" style="width:250px; height:auto;">
-		<img src="images/br_choco.png" style="width:250px; height:auto;">
-		<p></p>
-		<div style="float:left; padding-left:380px;">치즈 갈릭 브레드</div>
-		<div style="float:left; padding-left:170px;">크로아상</div>
-		<div style="float:left; padding-left:190px;">티라미수</div>
-		<div style="float:left; padding-left:180px;">플레인 케익</div>
-		<div style="float:left; padding-left:180px;">초코 케익</div>
-		<div style="float:left; padding-left:410px;">\4000</div>
-		<div style="float:left; padding-left:220px;">\2000</div>
-		<div style="float:left; padding-left:210px;">\4000</div>
-		<div style="float:left; padding-left:200px;">\2000</div>
-		<div style="float:left; padding-left:210px;">\2000</div>
-		<br><br></br><br></br>
-		
 	</div>
 <!---주문 양식 테이블----->
 	<div id = "order">
@@ -93,11 +82,11 @@
 		</form>
 	</div>
 <!---하단바----->
-     <div id = "bottom">
-      <div id = "bottom_logo">
+     <div id = "footer">
+      <div id = "footer_logo">
          <br>A COFFEE</br>
       </div>
-      <div id = "bottom_copy_info">
+      <div id = "footer_info">
          <br>서울특별시 중구 동국대학교 서울캠퍼스 신공학관 6119 (서울특별시 중구 필동3가 26-1)</br>
          대표이사 : 박종근 &nbsp;&nbsp;|&nbsp;&nbsp; 학번 : 2016112107 &nbsp;&nbsp;|&nbsp;&nbsp; TEL : 010-1234-5678
       </div>
