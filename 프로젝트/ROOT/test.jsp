@@ -10,8 +10,8 @@
 <html>
 <head>
 <style type="text/css">
-.beforeBooked{
-background-color:blue;
+.cantBooked{
+background-color:gray;
 }
 .afterBooked{
 background-color:red;
@@ -21,6 +21,13 @@ background-color:red;
 <script type="text/javascript">
 
 function showTable(){
+	var tb = document.getElementById("bsTable");
+	
+	<% for(int i=0; i<9;i++) {%>
+		tb.rows[0].className='cantBooked';
+		tb.rows[<%=i%>].cells[0].className='cantBooked';		
+	<%}%>
+	
    <%
      int[] sIndex;
      int rowIndex=-1;
@@ -28,50 +35,20 @@ function showTable(){
    
      if(session.getAttribute("color")!=null)
      {
-	sIndex=(int[])(session.getAttribute("color"));
-             for(int i=0; i<sIndex.length; i++) 
-             { 
+		sIndex=(int[])(session.getAttribute("color"));
+             for(int i=0; i<sIndex.length; i++)
+             {
                 if(sIndex[i]!=-1)
                 {
                   rowIndex=sIndex[i]/10+1;
                   colIndex=sIndex[i]%10+1;
                 }%>
-				
-				var tb = document.getElementById("bsTable");
 				tb.rows[<%=rowIndex%>].cells[<%=colIndex%>].className='afterBooked';
-			<%}%>
-	<%}%>
+			<%}
+	}%>
 }
-
 	
 function forward(elem1){
-	
-	
-	
-		var tb = document.getElementById("bsTable");
-		var first = (elem1-elem1%10)/10;
-	    var second = elem1%10;
-		var msg = "";
-		var booked_name;
-		var booked_time;
-		
-	<%
-	if(session.getAttribute("arr_name")!=null && session.getAttribute("arr_date")!=null)
-	{
-		String[] arr_name=(String[])(session.getAttribute("arr_name"));
-		String[] arr_time=(String[])(session.getAttribute("arr_time"));
-	}%>
-	
-		if(tb.rows[first].cells[second].className=='afterBooked' ){
-			
-			msg += "Already reserved seat !\n";
-			msg += "Name : " + <%=arr_name[j*10+k]%> + "\n";
-			msg += "Time : " + <%=arr_name[j*10+k]%> + "\n";
-			alert(msg);
-			
-		return false;
-		}
-		
       var first = String.fromCharCode((elem1-elem1%10)/10 + 64); // 좌석 행 정보 A~H
 	  var second = elem1%10; // 좌석 열 정보 1~8
       location.href='/HelloWorld?first='+first+'&second='+second;
@@ -79,21 +56,22 @@ function forward(elem1){
 </script>
 </head>
 
-
 <body onload="showTable();"> <!-- 좌석 표 -->
-	
+	<center>
+	<h1> Seat Table </h1>
 	<%
-		SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM/dd/HH:mm:ss");
-		Date date = new Date();
-		String currentTime = simpleDate.format(date);%>
+	SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM/dd/HH:mm:ss");
+	Date date = new Date();
+	String currentTime = simpleDate.format(date);
 	
-	<%!String row[]={"","A","B","C","D","E","F","G","H"};%> <!-- 열 -->
-	<%!String col[]={"","1","2","3","4","5","6","7","8"};%> <!-- 행 -->
+	String row[]={"","A","B","C","D","E","F","G","H"};
+	String col[]={"","1","2","3","4","5","6","7","8"};
 	
-	<% out.println("접속 시간 : " + currentTime+ "<br>"); %>
-	<% out.println("좌석표<br>"); %>
+	out.println(currentTime); 
+	%>
 	
-	<table id="bsTable" border="1">
+	<hr></hr>
+	<table id="bsTable" border="0" width="400" height="400" ;>
 	<tr>
 	<%for(int i=0;i<9;i++){%> <!-- 클릭 안되는 행에 대한 ..? "" ~ H -->
 	<td> <%=col[i]%>  </td> <%}%>
@@ -108,6 +86,7 @@ function forward(elem1){
 	</tr>
 	</tr>
 	</table>
+	</center>
 </body>
 </html>
 

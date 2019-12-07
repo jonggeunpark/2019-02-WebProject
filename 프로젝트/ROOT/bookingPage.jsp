@@ -6,6 +6,10 @@
 
 <html>
 <head>
+<title> Booking page </title>
+<style>
+</style>
+
 <script type="text/javascript">
 function validate()
 {
@@ -25,21 +29,26 @@ function validate()
 		msg += "name is empty!\n";
 		status_flag=false;
 	}
+	// 이름 숫자 체크 구현
+	if(cus_name.indexOf("0") != -1 || cus_name.indexOf("1") != -1 || cus_name.indexOf("2") != -1 || cus_name.indexOf("3") != -1
+	|| cus_name.indexOf("4") != -1 || cus_name.indexOf("5") != -1 || cus_name.indexOf("6") != -1 || cus_name.indexOf("7") != -1
+	|| cus_name.indexOf("8") != -1 || cus_name.indexOf("9") != -1) 
+	{
+		msg+= "name contain number\n";
+		status_flag=false;
+	}
 	
 	if(!cus_email) // 이메일 미기입
 	{
 		msg+= "email is empty!\n";
 		status_flag=false;
 	}
-
-	/*
-	if(!cus_email.contains("@"))
+	
+	if(cus_email.indexOf("@") == -1)
 	{
 		msg+= "email must contain @\n";
 		status_flag=false;
 	}
-	*/
-	
 	
 	if(cus_code!=sec) // 보안코드 틀림
 	{	
@@ -48,7 +57,9 @@ function validate()
 	}
 		
 	if(status_flag == false)
+	{
 		alert(msg);
+	}
 	
 	return status_flag;
 }
@@ -56,7 +67,7 @@ function validate()
 </script>
 </head>
 <body>
-
+<center>
 <%
 SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM/dd/HH:mm:ss");
 Date date = new Date();
@@ -68,26 +79,25 @@ int firstIndex = seatNo.charAt(0)-65; // A의 아스키 코드값인 65 빼줌
 int secondIndex = seatNo.charAt(1)-49; // 1의 아스키코드값인 49 빼줌
 %>
 
-Booking page
-<p />
-Connect Time : <% out.println(currentTime);%> <br />
+<h1> Booking page </h1>
+<%out.println(currentTime);%> <br/>
 Seat No : <% out.println(seatNo);%> <br />
-
+<hr></hr>
+<table>
 <form method ="post" onsubmit ="return validate();" action="/HelloWorld">
-name (required): <input type = "text" id = "cus_name" name="cusName" /> <br /> <!-- 이름 입력 태그 -->
-email address (required, @) : <input type = "text" id = "cus_email" name="cusEmail"/> <br /><!-- 이메일 입력 태그 -->
-phone number : <input type = "text" id = "cus_number" name="cusNumber"/> <br /> <!-- 전화번호 입력 태그 -->
-address : <input type = "text" id = "cus_address" name="cusAddress"/> <br /> <!-- 주소지 입력 태그 -->
-security code : <% out.println(security_code);%> <br />
-<input type = "text" id = "cus_code" name="cusCode" /> <!-- 보안 코드 입력 태그 -->
+<tr><td>name (required, not 1~9)</td><td> <input type = "text" id = "cus_name" name="cusName" /></td> <!-- 이름 입력 태그 -->
+<tr><td>email address (required, @)</td><td><input type = "text" id = "cus_email" name="cusEmail"/></td><!-- 이메일 입력 태그 -->
+<tr><td>phone number </td><td><input type = "text" id = "cus_number" name="cusNumber"/> </td> <!-- 전화번호 입력 태그 -->
+<tr><td>address </td><td><input type = "text" id = "cus_address" name="cusAddress"/> </td> <!-- 주소지 입력 태그 -->
+<tr><td>security code : <%=security_code%></td> <td><input type = "text" id = "cus_code" name="cusCode" /> </td><!-- 보안 코드 입력 태그 -->
 <input type="hidden" id="sec" value="<%=security_code%>" /> <!-- 보안 코드 --> 
 <input type="hidden" name ="first" value="<%=firstIndex%>" /> <!-- 좌석 행 --> 
 <input type="hidden" name ="second" value="<%=secondIndex%>" /> <!-- 좌석 열 -->
 <input type="hidden" name ="time" value="<%=currentTime%>" /> <!-- 접속 시간 -->
+</table>
 <input type="submit" value="submit"/>
 <input type="reset" value="clear" />
-
-<br />
 </form>
+</center>
 </body>
 </html>
