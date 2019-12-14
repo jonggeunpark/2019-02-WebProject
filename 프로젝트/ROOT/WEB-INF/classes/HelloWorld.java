@@ -98,7 +98,7 @@ public class HelloWorld extends HttpServlet {
 	   
 	    if(count >= 3)
 		{
-			out.println("booked over 3");
+			out.println("Only 3 seats can be reserved");
 			out.println("<br></br>name : " + name);
 			out.println("<br></br>email : " + email);
 			out.println("<br></br><a href='javascript:history.go(-1)'> previous page </a>");
